@@ -1,10 +1,5 @@
-FROM node:22-alpine
+FROM nginx:latest
 
-COPY package.json /app/
-COPY src /app/
+COPY index.html /usr/share/nginx/html/
 
-WORKDIR /app
-
-RUN npm install
-
-CMD ["node", "server.js"]
+EXPOSE 80
